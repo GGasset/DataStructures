@@ -1,11 +1,9 @@
 namespace DataStructures
 {
-    public class SinglyLinkedList
+    public class DoublyLinkedList
     {
-        ///<summary>Head of the list</summary>
         public ListItem firstItem;
-
-        public SinglyLinkedList()
+        public DoublyLinkedList()
         {
             firstItem = null;
         }
@@ -23,6 +21,7 @@ namespace DataStructures
                 while (transverser.nextItem != null)
                     transverser = transverser.nextItem;
                 
+                temporalItem.previousItem = transverser;
                 transverser.nextItem = temporalItem;
             }
         }
@@ -43,17 +42,16 @@ namespace DataStructures
             return output;
         }
 
-
         public class ListItem
         {
             public ListItem(int value)
             {
-                this.value = value;
-                nextItem = null;
+                previousItem = nextItem = null;
+                this.value = value;   
             }
-            
-            public ListItem nextItem;
+            public ListItem previousItem;
             public int value;
+            public ListItem nextItem;
         }
     }
 }

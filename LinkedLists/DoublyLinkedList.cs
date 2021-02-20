@@ -26,6 +26,16 @@ namespace DataStructures
             }
         }
 
+        public int GetAt(int index)
+        {
+            ListItem transverser = this.firstItem;
+            for (int i = 1; i < index; i++)
+            {
+                transverser = transverser.nextItem;
+            }
+            return transverser;
+        }
+
         public override string ToString()
         {
             string output = string.Empty;

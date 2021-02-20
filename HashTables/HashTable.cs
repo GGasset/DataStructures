@@ -1,8 +1,7 @@
 namespace DataStructures
 {
-    class HashTable
+    class HashTable<KeyType, DataType>
     {
-        Type dataType;
         DoublyLinkedList values;
         
     }

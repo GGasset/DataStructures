@@ -5,7 +5,7 @@ namespace DataStructures
     {
         ///<summary>Head of the list</summary>
         public ListItem firstItem;
-        public int Lenght => length;
+        public int Length => length;
         private int length = 0;
 
         public SinglyLinkedList()
@@ -33,6 +33,8 @@ namespace DataStructures
 
         public int GetAt(int index)
         {
+            if (index >= length)
+                throw new IndexOutOfRangeException();
             ListItem transverser = this.firstItem;
             for (int i = 1; i < index; i++)
             {
@@ -43,7 +45,10 @@ namespace DataStructures
 
         public void RemoveAt(int index)
         {
-            GetAt(index - 1).nextItem = GetAt(index + 1);
+            if (index == lenght - 1)
+                GetAt(index - 1).nextItem = null;
+            else
+                GetAt(index - 1).nextItem = GetAt(index + 1);
             length--;
         }
 

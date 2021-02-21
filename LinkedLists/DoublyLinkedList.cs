@@ -17,7 +17,7 @@ namespace DataStructures
         public int GetLength() => length;
 
         ///<summary>Adds an element at the end of the list</summary>
-        public T AddItem(T value)
+        public T AddLast(T value)
         {
             AddAtIndex(length - 1, value);
             return value;
@@ -27,7 +27,7 @@ namespace DataStructures
         {
             if (index == length || firstItem == null)
                 AddItem(value);
-            else if (GetAt(index) != null)
+            else
             {
                 ListItem temporalItem = new ListItem(value);
                 temporalItem.nextItem = GetAt(index);
@@ -40,13 +40,13 @@ namespace DataStructures
 
                 length++;
             }
-            else
-                throw new IndexOutOfRangeException();
             return value;
         }
 
         public ListItem GetAt(int index)
         {
+            if (index >= length)
+                throw new IndexOutOfRangeException();
             ListItem transverser = this.firstItem;
             int i = 0;
             while (i < index)
@@ -57,10 +57,26 @@ namespace DataStructures
             return transverser;
         }
 
+        public void RemoveLast()
+        {
+            RemoveAt(length - 1);
+        }
+
         public void RemoveAt(int index)
         {
-            GetAt(index - 1).nextItem = GetAt(index + 1);
-            GetAt(index + 1).previousItem = GetAt(index - 1);
+            if (index == length - 1)
+            {
+                GetAt(index - 1).nextItem = null;
+            }
+            else if(index == 0)
+            {
+                GetAt(index + 1).previousItem = null;
+            }
+            else
+            {
+                GetAt(index - 1).nextItem = GetAt(index + 1);
+                GetAt(index + 1).previousItem = GetAt(index - 1);
+            }
             length--;
         }
 

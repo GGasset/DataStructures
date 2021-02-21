@@ -1,9 +1,9 @@
 namespace DataStructures
 {
-    class HashTable<ValueType>
+    class HashTable<T>
     {
         private DoublyLinkedList<string> keys;
-        private DoublyLinkedList<ValueType> values;
+        private DoublyLinkedList<T> values;
         
     }
 }

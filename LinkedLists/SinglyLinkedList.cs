@@ -1,9 +1,12 @@
 namespace DataStructures
 {
+    //I recommend checking Doubly Linked Lists because it has more features.
     public class SinglyLinkedList
     {
         ///<summary>Head of the list</summary>
         public ListItem firstItem;
+        public int Lenght => length;
+        private int length = 0;
 
         public SinglyLinkedList()
         {
@@ -25,6 +28,7 @@ namespace DataStructures
                 
                 transverser.nextItem = temporalItem;
             }
+            length++;
         }
 
         public int GetAt(int index)
@@ -35,6 +39,12 @@ namespace DataStructures
                 transverser = transverser.nextItem;
             }
             return transverser;
+        }
+
+        public void RemoveAt(int index)
+        {
+            GetAt(index - 1).nextItem = GetAt(index + 1);
+            length--;
         }
 
         public override string ToString()

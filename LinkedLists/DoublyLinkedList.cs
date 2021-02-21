@@ -1,41 +1,54 @@
+using System;
+
 namespace DataStructures
 {
     public class DoublyLinkedList<T>
     {
-        public ListItem<T> firstItem;
-        private int Length;
+        public ListItem firstItem;
+        private int length;
+        public int Lenght => length;
+
         public DoublyLinkedList()
         {
             firstItem = null;
-            Length = 0;
+            length = 0;
         }
 
-        public int GetLength() => Length;
+        public int GetLength() => length;
 
         ///<summary>Adds an element at the end of the list</summary>
         public T AddItem(T value)
         {
-            ListItem<T> temporalItem = new ListItem(value);
-            ListItem<T> transverser;
-            if (firstItem == null)
-                firstItem = temporalItem;
-            else
-            {
-                transverser = firstItem;
-                while (transverser.nextItem != null)
-                    transverser = transverser.nextItem;
-                
-                temporalItem.previousItem = transverser;
-                transverser.nextItem = temporalItem;
-            }
-            this.Length++;
+            AddAtIndex(length - 1, value);
             return value;
         }
 
-        public ListItem<T> GetAt(int index)
+        public T AddAtIndex(int index, T value)
         {
-            ListItem<T> transverser = this.firstItem;
-            int i = 1;
+            if (index == length || firstItem == null)
+                AddItem(value);
+            else if (GetAt(index) != null)
+            {
+                ListItem temporalItem = new ListItem(value);
+                temporalItem.nextItem = GetAt(index);
+                if (index != 0)
+                    temporalItem.previousItem = GetAt(index - 1);
+
+                GetAt(index).previousItem = temporalItem;
+                if (index != 0)
+                    GetAt(index - 1).nextItem = temporalItem;
+
+                length++;
+            }
+            else
+                throw new IndexOutOfRangeException();
+            return value;
+        }
+
+        public ListItem GetAt(int index)
+        {
+            ListItem transverser = this.firstItem;
+            int i = 0;
             while (i < index)
             {
                 transverser = transverser.nextItem;
@@ -47,8 +60,8 @@ namespace DataStructures
         public void RemoveAt(int index)
         {
             GetAt(index - 1).nextItem = GetAt(index + 1);
-            GetAt(index + 1).previousItem = GetAt(index - 1)
-            GetAt(index) = null;
+            GetAt(index + 1).previousItem = GetAt(index - 1);
+            length--;
         }
 
         public override string ToString()
@@ -67,16 +80,17 @@ namespace DataStructures
             return output;
         }
 
-        public class ListItem<T>
+        public class ListItem
         {
             public ListItem(T value)
             {
                 previousItem = nextItem = null;
-                this.value = value;   
+                this.value = value;
             }
-            public ListItem<T> previousItem;
+
+            public ListItem previousItem;
             public T value;
-            public ListItem<T> nextItem;
+            public ListItem nextItem;
         }
     }
 }

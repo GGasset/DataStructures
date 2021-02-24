@@ -7,7 +7,7 @@ namespace DataStructures
         public ListItem firstItem;
         public ListItem LastItem => GetLast();
         private int length;
-        public int Lenght => length;
+        public int Length => length;
 
         public DoublyLinkedList()
         {

@@ -4,7 +4,8 @@ namespace DataStructures
 {
     public class DoublyLinkedList<T>
     {
-        public ListItem firstItem, LastItem => GetLast();
+        public ListItem firstItem;
+        public ListItem LastItem => GetLast();
         private int length;
         public int Lenght => length;
 
@@ -26,7 +27,7 @@ namespace DataStructures
         private ListItem GetLast()
         {
             if (length != 0)
-                return GetAt(index - 1)
+                return GetAt(index - 1);
             return null;
         }
 

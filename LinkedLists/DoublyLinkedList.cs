@@ -20,21 +20,22 @@ namespace DataStructures
         ///<summary>Adds an element at the end of the list</summary>
         public T AddLast(T value)
         {
-            AddAtIndex(length - 1, value);
+            AddAtIndex(length, value);
             return value;
         }
 
         private ListItem GetLast()
         {
             if (length != 0)
-                return GetAt(index - 1);
+                return GetAt(length - 1);
             return null;
         }
 
         public T AddAtIndex(int index, T value)
         {
             if (index == length || firstItem == null)
-                AddItem(value);
+                GetLast().nextItem = new ListItem(value);
+
             else
             {
                 ListItem temporalItem = new ListItem(value);
@@ -76,7 +77,7 @@ namespace DataStructures
             {
                 GetAt(index - 1).nextItem = null;
             }
-            else if(index == 0)
+            else if (index == 0)
             {
                 GetAt(index + 1).previousItem = null;
             }

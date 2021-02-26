@@ -56,14 +56,14 @@ namespace DataStructures
         {
             if (index >= length)
                 throw new IndexOutOfRangeException();
-            ListItem transverser = this.firstItem;
+            ListItem transverser = ref this.firstItem;
             int i = 0;
             while (i < index)
             {
                 transverser = transverser.nextItem;
                 i++;
             }
-            return transverser;
+            return ref transverser;
         }
 
         public void RemoveLast()

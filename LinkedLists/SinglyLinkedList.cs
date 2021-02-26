@@ -35,12 +35,12 @@ namespace DataStructures
         {
             if (index >= length)
                 throw new IndexOutOfRangeException();
-            ListItem transverser = this.firstItem;
+            ListItem transverser = ref this.firstItem;
             for (int i = 1; i < index; i++)
             {
                 transverser = transverser.nextItem;
             }
-            return transverser;
+            return ref transverser;
         }
 
         public void RemoveAt(int index)

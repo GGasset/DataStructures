@@ -1,12 +1,13 @@
 using System;
+using DataStructures;
 
 namespace DataStructures
 {
     public class Fraction
     {
-        public double numerator, denominator;
+        public int numerator, denominator;
 
-        public Fraction(double numerator, double denominator)
+        public Fraction(int numerator, int denominator)
         {
             if (denominator == 0)
                 throw new DivideByZeroException("The denominator must not equal zero.")
@@ -55,7 +56,7 @@ namespace DataStructures
             }
         }
 
-        private static ToCommonDenominator(Fraction x, Fraction y, out Fraction commonX, out Fraction commonY)
+        private static void ToCommonDenominator(Fraction x, Fraction y, out Fraction commonX, out Fraction commonY)
         {
                 int commonDenominator = x.denominator * y.denominator;
                 x.numerator = x.numerator * (commonDenominator / x.denominator);

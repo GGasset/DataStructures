@@ -2,5 +2,9 @@ G:\Code\C# repos\DataStructures\DataStructures\obj\Debug\DataStructures.csproj.A
 G:\Code\C# repos\DataStructures\DataStructures\obj\Debug\DataStructures.csproj.SuggestedBindingRedirects.cache
 G:\Code\C# repos\DataStructures\DataStructures\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
 G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\obj\Debug\DataStructures.csproj.AssemblyReference.cache
-G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\obj\Debug\DataStructures.csproj.SuggestedBindingRedirects.cache
 G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
+G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\bin\Debug\DataStructures.dll.config
+G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\bin\Debug\DataStructures.dll
+G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\bin\Debug\DataStructures.pdb
+G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\obj\Debug\DataStructures.dll
+G:\Code\C# repos\Machine Learning\GeneticSnake\DataStructures\obj\Debug\DataStructures.pdb

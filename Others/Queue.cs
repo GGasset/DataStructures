@@ -1,9 +1,14 @@
 namespace DataStructures
 {
     /// <summary>Last in - First out structure</summary>
-    class Queue<T>
+    public class Queue<T>
     {
         DoublyLinkedList<T> values;
+
+        public Queue()
+        {
+            values = new DoublyLinkedList<T>();
+        }
 
         /// <summary>Adds an element to the end of the queue</summary>
         public T Enqueue(T value)

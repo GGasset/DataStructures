@@ -15,7 +15,7 @@ namespace DataStructures
         }
 
 
-        class TreeNode
+        public class TreeNode
         {
             public TreeNode(T value)
             {

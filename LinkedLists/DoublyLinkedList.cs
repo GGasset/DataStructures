@@ -52,11 +52,11 @@ namespace DataStructures
             return value;
         }
 
-        public ListItem GetAt(int index)
+        public ref ListItem GetAt(int index)
         {
             if (index >= length)
                 throw new IndexOutOfRangeException();
-            ListItem transverser = ref this.firstItem;
+            ref ListItem transverser = ref this.firstItem;
             int i = 0;
             while (i < index)
             {

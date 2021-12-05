@@ -10,7 +10,7 @@ namespace DataStructures
         public Fraction(int numerator, int denominator)
         {
             if (denominator == 0)
-                throw new DivideByZeroException("The denominator must not equal zero.")
+                throw new DivideByZeroException("The denominator must not equal zero.");
             this.numerator = numerator;
             this.denominator = denominator;
         }
@@ -24,12 +24,12 @@ namespace DataStructures
             => new Fraction(x.numerator * y.numerator, x.denominator * y.denominator);
 
         public static Fraction operator *(Fraction x, double y)
-            => new Fraction(x.numerator + y * x.denominator, x,denominator);
+            => new Fraction((int)(x.numerator + y * x.denominator), x.denominator);
 
         public static Fraction operator /(Fraction x, Fraction y)
             => new Fraction(x.numerator * y.denominator, x.denominator * y.numerator);
 
-        public static Fraction operator /(Fraction x, double y) => x / new Fraction(y, 1);
+        public static Fraction operator /(Fraction x, double y) => x / new Fraction((int)(y), 1);
 
         public static Fraction operator +(Fraction x, Fraction y) => Add(x, y);
         public static Fraction operator -(Fraction x, Fraction y) => Subtract(x, y);

@@ -24,11 +24,11 @@ namespace DataStructures
             return value;
         }
 
-        private ListItem GetLast()
+        private ref ListItem GetLast()
         {
             if (length != 0)
-                return GetAt(length - 1);
-            return null;
+                return ref GetAt(length - 1);
+            return ref firstItem;
         }
 
         public T AddAtIndex(int index, T value)

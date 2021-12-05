@@ -1,3 +1,5 @@
+using System;
+
 namespace DataStructures
 {
     //I recommend checking Doubly Linked Lists because it has more features.
@@ -31,11 +33,11 @@ namespace DataStructures
             length++;
         }
 
-        public int GetAt(int index)
+        public ref ListItem GetAt(int index)
         {
             if (index >= length)
                 throw new IndexOutOfRangeException();
-            ListItem transverser = ref this.firstItem;
+            ref ListItem transverser = ref this.firstItem;
             for (int i = 1; i < index; i++)
             {
                 transverser = transverser.nextItem;
@@ -45,7 +47,7 @@ namespace DataStructures
 
         public void RemoveAt(int index)
         {
-            if (index == lenght - 1)
+            if (index == Length - 1)
                 GetAt(index - 1).nextItem = null;
             else
                 GetAt(index - 1).nextItem = GetAt(index + 1);

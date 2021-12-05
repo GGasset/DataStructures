@@ -8,7 +8,7 @@ namespace DataStructures
         /// <summary>Adds an element to the end of the queue</summary>
         public T Enqueue(T value)
         {
-            values.Add(value);
+            values.AddLast(value);
             return value;
         }
 

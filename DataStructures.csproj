@@ -48,6 +48,7 @@
     <Compile Include="Grid\TypeGrid.cs" />
     <Compile Include="Others\Queue.cs" />
     <Compile Include="Others\Stack.cs" />
+    <Compile Include="Others\Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
